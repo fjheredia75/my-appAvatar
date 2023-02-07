@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Avatar, Card } from 'antd';
+import Energia from './components/Avatar';
+import Carou from './components/Carousel';
+import Boton from './components/Boton';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const { Meta } = Card;
+
+const App: React.FC = () => (
+  <Card
+    style={{ width: 420 }}
+   
+    actions={[
+      <>
+      <Carou/>
+      <Boton/>
+      </>
+    ]}
+  >
+    <Meta
+      avatar={<Avatar style={{width:110, height:110}}
+     src="https://e7.pngegg.com/pngimages/518/82/png-clipart-iron-man-marvel-comics-marvel-iron-man-marvel-comics.png" />}
+      title="Iron Man"
+      description="Anthony Edward Stark"
+    />
+    <Energia/>
+  </Card>
+);
 
 export default App;
